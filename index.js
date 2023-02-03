@@ -33,7 +33,7 @@ const turmas = [
         termino: "30/01/2023",
         numeroDeAlunos: 150,
         periodo: "noturno",
-        concluida: false
+        concluida: "Não"
     },
 
     {
@@ -43,7 +43,7 @@ const turmas = [
         termino: "30/12/2022",
         numeroDeAlunos: 200,
         periodo: "integral",
-        concluida: false
+        concluida: "Não"
     },
 
     {
@@ -53,7 +53,7 @@ const turmas = [
         termino: "15/10/2022",
         numeroDeAlunos: 180,
         periodo: "noturno",
-        concluida: true
+        concluida: "Sim"
     },
 
     {
@@ -63,7 +63,7 @@ const turmas = [
         termino: "01/01/2023",
         numeroDeAlunos: 80,
         periodo: "integral",
-        concluida: false
+        concluida: "Não"
     },
 
     {
@@ -73,7 +73,7 @@ const turmas = [
         termino: "04/09/2022",
         numeroDeAlunos: 200,
         periodo: "noturno",
-        concluida: true
+        concluida: "Sim"
     },
 
     {
@@ -83,7 +83,7 @@ const turmas = [
         termino: "20/06/2022",
         numeroDeAlunos: 100,
         periodo: "integral",
-        concluida: true
+        concluida: "Sim"
     },
 
     {
@@ -93,7 +93,7 @@ const turmas = [
         termino: "12/06/2022",
         numeroDeAlunos: 200,
         periodo: "noturno",
-        concluida: true
+        concluida: "Sim"
     },
 
     {
@@ -103,7 +103,7 @@ const turmas = [
         termino: "18/04/2023",
         numeroDeAlunos: 90,
         periodo: "integral",
-        concluida: false
+        concluida: "Não"
     },
 ]
 
@@ -112,7 +112,7 @@ const estudantes = [
     {
         nome: "Chris Evans",
         turma: "Hipátia",
-        curso: ["JavaScript", "HTML e CSS", "APIsRest"],
+        curso: ["JavaScript", " HTML e CSS", " APIsRest"],
         valor: cursos[0].valor + cursos[1].valor + cursos[2].valor,
         nParcelas: 5,
         desconto: true,
@@ -141,108 +141,208 @@ const estudantes = [
     
 ]
 
-// Função de busca do Curso com FIND
-
-const buscarCurso=(nomeCurso)=> {
-    let procurarCurso = cursos.find(procurar => procurar.curso.toLowerCase() === nomeCurso.toLowerCase())
-
-    if(procurarCurso){
-        return procurarCurso
-    } return `Curso não encontrado`
-}
-
-// Função buscar estudante com STARTS WITH
 
 
-    const buscarEstudante=(nomeEstudante)=> {
-    
-        for(let i of estudantes){
-        if(i.nome.toLowerCase().startsWith(nomeEstudante.toLowerCase())){
-            return i
-        }
-        }
-        return `Estudante não encontrado`
-}
+////////////////// Função e variáveis para criar card das turmas
 
-// Função buscar Turma com FILTER
+const divDosCards = document.createElement("div")
+const container = document.getElementById("container")
 
 
-const buscarTurma=(nomeTurma)=> {
-    const filtrarTurma = turmas.filter(turmaProcurada => turmaProcurada.nome.toLowerCase() === nomeTurma.toLowerCase())
-    // Filtra o nome da turma e coloca dentro de uma variável, essa variável vira um array com o resultado da pesquisa
+const criaCard = (turmasBuscadas) => {
 
-    filtrarTurma.length > 0 ? console.log(filtrarTurma) : console.log('Turma não encontrada')
-    // If Ternário, se o tamanho da variável filtrar turma for maior que 0, é porque entrou a turma pesquisada, se não, não existe a turma pesquisada
-}
+    const cardsTurmas = document.getElementById('cards-turmas')
+    cardsTurmas.innerHTML = ""
 
-// Função para matricular novos estudantes
+    const cards = turmasBuscadas.map((cadaTurmaBuscada) =>{
+        return(`<div class="turmas">
+        <h1 class="titulo">${cadaTurmaBuscada.nome}</h1>
+        <p><b>Curso: </b>${cadaTurmaBuscada.curso}</p>
+        <p><b>Início: </b>${cadaTurmaBuscada.inicio}</p>
+        <p><b>Término: </b>${cadaTurmaBuscada.termino}</p>
+        <p><b>Numero de Alunos: </b>${cadaTurmaBuscada.numeroDeAlunos}</p>
+        <p><b>Período: </b>${cadaTurmaBuscada.periodo}</p>
+        <p><b>Concluído: </b>${cadaTurmaBuscada.concluida}</p>
+        </div>`)
+    })
 
-function matricularEstudante(nome,curso,turma,nParcelas){
-    const novaMatricula = {
-        nome,
-        curso,
-        turma,
-        nParcelas
+    cardsTurmas.innerHTML = cards
+
     }
-     estudantes.push(novaMatricula)
-     console.log(estudantes)
-     console.log(
-        ` Aluno Matriculado \n Nome: ${novaMatricula.nome} \n Curso: ${novaMatricula.curso} \n Turma: ${novaMatricula.turma} \n N Parcelas: ${novaMatricula.nParcelas}`)
-     
+
+////////////////// Função de buscar turma utilizando o filter e o startswith, aparecendo então toda turma que começa com o começo digitado
+
+const botaoBuscarTurma = () => {   
+const inputTurma = document.getElementById('buscar').value.toLowerCase()
+console.log(inputTurma)
+
+const turmaFiltrada = turmas.filter(cadaTurma => {
+    if(cadaTurma.nome.toLowerCase().startsWith(inputTurma.toLowerCase())){
+        return cadaTurma
+    }
+})
+return turmaFiltrada.length >= 0 ? criaCard(turmaFiltrada) : criaCard(turmas)
+
+}
+
+////////////////// Função para matricular um estudante novo, e adicioná-lo como um novo objeto ao Array Estudantes
+
+const matricularEstudante = () => { 
+ 
+const inputNome = document.getElementById('nomeMatricula').value
+const inputCurso = document.getElementById('cursoMatricula').value
+const inputTurma = document.getElementById('turmaMatricula').value
+const inputNParcelas = document.getElementById('nParcelasMatricula').value
+const resultado2 = document.getElementById("display-none")
+resultado2.innerHTML = `<h1>Aluno matriculado</h1>
+<img src="./midia/sucess.png" alt="sucesso">
+<div id="aluno-matriculado">
+<p>Nome: ${inputNome}</p>
+<p>Curso: ${inputCurso}</p>
+<p>Turma: ${inputTurma}</p>
+<p>Parcelado em: ${inputNParcelas}x</p>
+</div>
+`
+
+const novoEstudante = {
+    nome: inputNome,
+    turma: inputTurma,
+    curso: inputCurso,
+    nParcelas: inputNParcelas,
 }
 
 
-// Função CALLBACK Adicionar ao Carrinho
+estudantes.push(novoEstudante)
+}
+
+////////////////// Função para buscar Estudante com qualquer parte do nome, usando o INCLUDES
+
+const buscarEstudante= () => {
+        
+    const inputAluno = document.getElementById("nomeRelatorio").value.toLowerCase()
+ 
+    const alunoFiltrado = estudantes.filter(cadaAluno => {
+        if(cadaAluno.nome.toLowerCase().includes(inputAluno.toLowerCase())){
+            return cadaAluno
+        }
+    })
+ 
+    return alunoFiltrado
+}
+
+////////////////// Função ghost de Mensagem Recebida
+
+const botaoContato = () => {
+    
+    const mensagemRecebida = `<div class="confirmacao-de-envio">
+    <span>Mensagem recebida <br>com sucesso<br></span> <img src="./midia/sucess.png" alt="sucesso"></img>
+   </div>`
+   
+  return document.getElementById('display-none-2').innerHTML = mensagemRecebida
+   
+   }
+
+////////////////// Função de relatório de um estudante já cadastrado, recebe como parâmetro o callback da função BUSCAR ESTUDANTE
+
+const relatorioEstudante = (buscarEstudante)=>{
+    const retorno = `<p>Nome: ${buscarEstudante[0].nome} <br> 
+    Turma: ${buscarEstudante[0].turma} <br> 
+    Curso: ${buscarEstudante[0].curso} <br> 
+    Valor Total: ${buscarEstudante[0].valor} <br> 
+    Valor Parcela: ${buscarEstudante[0].parcelas} <br> 
+    N Parcelas: ${buscarEstudante[0].nParcelas}</p>`
+    
+    document.getElementById('relatorioRetornado').innerHTML = retorno
+}
+
+////////////////// Função para buscar o curso pelo nome exato
+
+const buscarCurso = (nomeCurso) => {
+    
+    return cursos.find((cadaCurso) => cadaCurso.curso.toLowerCase() === nomeCurso.toLowerCase())
+}
+
+////////////////// Variáveis e Função para adicionar um curso ao carrinho
+////// Poderia ter usado como callback a função acima, porém, tentei fazer de uma forma mais complexa
 
 const carrinhoCursos = []
+const carrinhoNomes = []
 
-const adicionarAoCarrinho = (buscarCurso)=>{
-    const valorCurso = buscarCurso.valor
-    carrinhoCursos.push(valorCurso)
-    return carrinhoCursos
+const adicionarAoCarrinho = () =>{
 
-}
-
-// Função CALLBACK Relatório do Estudante
-
-
-const relatorioEstudante = (cb)=>{
-    return ` Nome: ${cb.nome} \n Turma: ${cb.turma} \n Curso: ${cb.curso} \n Valor Total: ${cb.valor} \n Valor Parcela: ${cb.parcelas} \n N Parcelas: ${cb.nParcelas}`
-}
-
-
-// Função para saber se o aluno possui desconto
-
-
-function parcelarCurso(numParcelas, carrinhoCursos) {
+const inputCurso = document.getElementById("CursoFinanceiro").value;
     let soma = 0
-    let desconto = 0
-   
-    for(let i in carrinhoCursos){
-        soma += carrinhoCursos[i]
+    let nomeCursos = " "
+    const resultado = document.getElementById('valorRetornado')
+    const cursoSelecionado = cursos.find(curso => curso.curso.toLowerCase() === inputCurso.toLowerCase());
+    console.log(cursoSelecionado)
+    if (!cursoSelecionado) {
+        resultado.innerHTML = `<div class="result">Curso não encontrado.</div>`
     }
-
-    let valorComDesconto = soma
-
-    if(numParcelas <= 2){
-        desconto = 0.2
-        valorComDesconto = soma - (soma * desconto)
-        console.log(valorComDesconto)
-        console.log(`O valor do pagamento é de R$${valorComDesconto}. Foi concedido desconto de 20%`)
+    if(cursoSelecionado){
+        soma += cursoSelecionado.valor
+        nomeCursos += cursoSelecionado.curso
+        carrinhoCursos.push(soma)
+        carrinhoNomes.push(nomeCursos)
+        console.log(carrinhoNomes)
+        resultado.innerHTML += `<div class="result">Curso ${cursoSelecionado.curso} foi adicionado ao carrinho.</div>`
+        document.getElementById('adicionarCurso').innerHTML = `Adicionar outro curso`
     }
+    
+    document.getElementById("CursoFinanceiro").value = ""
 
-    switch(carrinhoCursos.length){
-        case 3:
-            console.log(`O valor do pagamento é de ${valorComDesconto * 0.85} Foi concedido desconto de 15%`)
-        break
-
-        case 2:
-            console.log(`O valor do pagamento é de R$${valorComDesconto * 0.90} Foi concedido desconto de 10%`)
-        break
 }
-} 
+
+////////////////// Função para calcular o desconto dos cursos adicionados ao carrinho 
+
+const verValor = () => {
+    let desconto = 0
+    let valores = carrinhoCursos
+    let valorTotal = valores.reduce((total, valor) => total + valor, 0)
+
+    let nParcelas = document.getElementById('nParcelasFinanceiro').value
+    let resultado2 = document.getElementById("valorRetornado")
+    resultado2.innerHTML = ""
+
+ 
+    if (carrinhoCursos.length >= 2) {
+        switch (carrinhoCursos.length) {
+            case 3:
+                desconto = 0.15
+                break;
+            case 2:
+                desconto = 0.10
+                break;
+            default:
+                desconto = 0
+                break;
+        }
+     }
+
+     if (!nParcelas){
+        desconto += 0.2
+        nParcelas = 1
+     }
+
+     else if (nParcelas < 3 && nParcelas > 0) {
+        desconto += 0.2
+    }
+    
+    
+    const valorFinal = valorTotal - (valorTotal * desconto)
+    const valorParcela = valorFinal / nParcelas;
+    
 
 
-adicionarAoCarrinho(buscarCurso('JavaScript'))
-adicionarAoCarrinho(buscarCurso('HTML e CSS'))
-parcelarCurso(2, carrinhoCursos)
+    if (carrinhoNomes.length === 0){
+        return resultado2.innerHTML = `<div class="resultadoDesconto"><h2>Adicione um curso para calcular o valor final</h2>`
+    }
+    else if (carrinhoNomes.length === 1){
+        return resultado2.innerHTML = `<div class="resultadoDesconto"><h1>Valor Total: R$${valorFinal}</h1><br>
+        <p>Curso escolhido: ${carrinhoNomes}. <br> Desconto de ${(desconto * 100).toFixed(2)}% <br> Parcelas de ${nParcelas}x de R$${valorParcela}</p>`
+    }
+    else if (carrinhoNomes.length > 1){
+        return resultado2.innerHTML = `<div class="resultadoDesconto"><h1>Valor Total: R$${valorFinal}</h1><br>
+        <p>Cursos escolhidos: ${carrinhoNomes}. <br> Desconto de ${(desconto * 100).toFixed(2)}% <br> Parcelas de ${nParcelas}x de R$${valorParcela}</p>`
+    }
+}

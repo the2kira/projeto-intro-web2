@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="./index.css">
-    <title>Labescola - Início</title>
+    <link rel="stylesheet" href="./contato.css">
+    <script src="./index.js" defer></script>
+    <title>Labescola - Contato</title>
 </head>
 
 <body>
@@ -21,60 +21,37 @@
         <nav>
             <ul class="navegacao">
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="cursos.html">Cursos</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="./cursos.html">Cursos</a></li>
+                <li><a href="./contato.html">Contato</a></li>
                 <li><a href="./area-adm.html">Area ADM</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <div class="container1">
-            <img src="./midia/background.png" alt="background" id="backgroundH">
-            <section class="container1centro">
-                <h1><b>Descubra o novo ensino!</b></h1>
-                <p id="subtitulo">Aprenda de verdade, no seu tempo, no seu ritmo</p>
-                <a class="botaocursos" href="./cursos.html" id="p-bottom">Conheça nossos cursos</a>
-            </section>
+        <section class="section-1">
+            <div class="container">
+                <div class="container-conteudo">
+                    <h2>Fale Conosco</h2>
+                    <label for="nome"><b>Nome</b></label>
+                    <input type="text" name="nome" id="input-nome">
 
-        </div>
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" name="email" id="input-email">
+
+                    <label for="mensagem"><b>Mensagem</b></label>
+                    <textarea id="input-mensagem" name="mensagem" placeholder="Deixe a sua mensagem aqui" rows="4"
+                        cols="50"></textarea>
+                    <button onclick="botaoContato()" class="botaoContato" id="botaoContato"><b>Enviar</b></button>
+                </div>
+            </div>
+
+            <div id="display-none-2">
+
+            </div>
 
 
-        <div class="container2">
-            <section class="container2centro">
-                <h1>Sobre Nós</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam nam illo maxime sit, est numquam.
-                    Quo accusantium, possimus illum laudantium aspernatur totam fugit vero corporis sapiente placeat ad
-                    assumenda facilis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam aliquid,
-                    consequatur vero architecto atque similique animi molestiae officiis maxime quo amet nihil voluptate
-                    soluta adipisci enim voluptatum voluptatibus sit quidem.</p>
-            </section>
-        </div>
-        <div class="container3">
-            <h1>Depoimentos</h1>
-            <section class="container3centro">
-                <div class="pessoas" id="person1">
-                    <img src="./midia/person1.png" alt="person1">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident eum quam maxime! Id eaque
-                        quibusdam natus</p>
-                </div>
-                <div class="pessoas" id="person2">
-                    <img src="./midia/person2.png" alt="person2">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit porro sit culpa, odit
-                        accusamus adipisci aliquid. Ipsam voluptatem suscipit aliquid quam aut cupiditate!</p>
-                </div>
-                <div class="pessoas" id="person3">
-                    <img src="./midia/person3.png" alt="person3">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, nemo voluptatem doloribus
-                        nulla cumque ex sit maxime veritatis reiciendis error!!</p>
-                </div>
-                <div class="pessoas" id="person4">
-                    <img src="./midia/person4.png" alt="person4">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste dolore accusamus neque
-                        consequuntur, itaque delectus error sit dolor dolorem explicabo</p>
-                </div>
-            </section>
-        </div>
+        </section>
         <div class="whatsapp">
             <a href="https://web.whatsapp.com">
                 <img src="./midia/whatsApp.png" alt="WhatsApp Logo" id="whatsapp">

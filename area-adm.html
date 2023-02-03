@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="./index.css">
-    <title>Labescola - Início</title>
+    <title>Labescola - Area ADM</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="./area-adm.css">
 </head>
 
 <body>
@@ -27,61 +27,54 @@
             </ul>
         </nav>
     </header>
-
     <main>
-        <div class="container1">
-            <img src="./midia/background.png" alt="background" id="backgroundH">
-            <section class="container1centro">
-                <h1><b>Descubra o novo ensino!</b></h1>
-                <p id="subtitulo">Aprenda de verdade, no seu tempo, no seu ritmo</p>
-                <a class="botaocursos" href="./cursos.html" id="p-bottom">Conheça nossos cursos</a>
-            </section>
-
-        </div>
-
-
-        <div class="container2">
-            <section class="container2centro">
-                <h1>Sobre Nós</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam nam illo maxime sit, est numquam.
-                    Quo accusantium, possimus illum laudantium aspernatur totam fugit vero corporis sapiente placeat ad
-                    assumenda facilis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam aliquid,
-                    consequatur vero architecto atque similique animi molestiae officiis maxime quo amet nihil voluptate
-                    soluta adipisci enim voluptatum voluptatibus sit quidem.</p>
-            </section>
-        </div>
-        <div class="container3">
-            <h1>Depoimentos</h1>
-            <section class="container3centro">
-                <div class="pessoas" id="person1">
-                    <img src="./midia/person1.png" alt="person1">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident eum quam maxime! Id eaque
-                        quibusdam natus</p>
+        <aside>
+            <div class="nav-adm">
+                <a id="a-nav-turmas" href="./area-adm.html">Turmas</a>
+                <a id="a-nav-matriculas" href="./area-adm-matriculas.html">Matrículas</a>
+                <a id="a-nav-financeiro" href="./area-adm-financeiro.html">Financeiro Alunos</a>
+            </div>
+        </aside>
+        <section class="meio" id="meio">
+            <div id="input">
+                <input onkeyup="botaoBuscarTurma()" type="text" name="buscar" id="buscar" value="">
+                <button class="buscarTurma">Buscar</button>
+            </div>
+            <div class="container" id="container">
+                <div id="cards-turmas">
+                    <div class="turmas">
+                        <h1 class="titulo">Hipátia</h1>
+                    </div>
+                    <div class="turmas">
+                        <h1 class="titulo">Sibyla</h1>
+                    </div>
+                    <div class="turmas">
+                        <h1 class="titulo">Curie</h1>
+                    </div>
+                    <div class="turmas">
+                        <h1 class="titulo">Zhenyi</h1>
+                    </div>
+                    <div class="turmas">
+                        <h1 class="titulo">Clarke</h1>
+                    </div>
+                    <div class="turmas">
+                        <h1 class="titulo">Blackwell</h1>
+                    </div>
+                    <div class="turmas">
+                        <h1 class="titulo">Elion</h1>
+                    </div>
+                    <div class="turmas">
+                        <h1 class="titulo">Burnell</h1>
+                    </div>
                 </div>
-                <div class="pessoas" id="person2">
-                    <img src="./midia/person2.png" alt="person2">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit porro sit culpa, odit
-                        accusamus adipisci aliquid. Ipsam voluptatem suscipit aliquid quam aut cupiditate!</p>
-                </div>
-                <div class="pessoas" id="person3">
-                    <img src="./midia/person3.png" alt="person3">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, nemo voluptatem doloribus
-                        nulla cumque ex sit maxime veritatis reiciendis error!!</p>
-                </div>
-                <div class="pessoas" id="person4">
-                    <img src="./midia/person4.png" alt="person4">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste dolore accusamus neque
-                        consequuntur, itaque delectus error sit dolor dolorem explicabo</p>
-                </div>
-            </section>
-        </div>
+            </div>
+        </section>
         <div class="whatsapp">
             <a href="https://web.whatsapp.com">
                 <img src="./midia/whatsApp.png" alt="WhatsApp Logo" id="whatsapp">
             </a>
         </div>
     </main>
-
     <footer>
         <div class="labescolalogo">
             <a href="./home.html">
