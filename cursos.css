@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+body {
+    height: 200vh;
+    width: 100%;
+}
+
+* a:link {
+    color: black;
+    text-decoration: none;
+}
+
+* a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+* a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+
+header {
+    height: 6%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navegacao {
+    display: flex;
+    gap: 40px;
+    list-style-type: none;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+#logo {
+    width: 349px;
+    height: 75px;
+    left: 255px;
+    top: 39px;
+}
+
+/* --------------------  MAIN  -------------------*/ 
+
+main {
+    height: 80%;
+    background-color: #000;
+}
+
+/* -------- SECTION 1 ---------- */
+
+.container-1 {
+    background-color: #F6C34A;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.container-1-topo {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.curso {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 50px;
+    width: 240px;
+    height: 210px;
+    padding: 30px;
+    border-radius: 9px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.curso h1 {
+    font-size: 1.5rem;
+}
+
+.curso p {
+    font-size: 14px;
+    padding-top: 30px;
+}
+
+#p-bottom {
+    color: #fff;
+}
+
+.botaoemail {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 90px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 60px 0 50px 0
+}
+
+/* -------- SECTION 2 ---------- */
+
+.container-2 {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.container-2-conteudo{
+    margin-bottom: 50px;
+}
+.conteudo {
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    justify-items: center;
+    align-items: center;
+    width: 700px;
+    padding: 20px 10px;
+    border-radius: 9px;
+    margin-bottom: 30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.conteudo h1 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    padding-bottom: 25px;
+}
+
+.conteudo #firsth3 {
+    padding-bottom: 10px;
+    grid-column: 2/3;
+    justify-self: flex-start;
+}
+
+.conteudo #secondh3 {
+    padding-bottom: 10px;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    justify-self: flex-start;
+}
+
+.conteudo #firstUl {
+    grid-column: 2/3;
+    list-style-type: none;
+    justify-self: flex-start;
+}
+
+.conteudo #secondUl {
+    grid-column: 3/4;
+    list-style-type: none;
+    justify-self: flex-start;
+}
+
+.conteudo li{
+    font-size: 13px;
+}
+
+/* --------------------  FOOTER  -------------------*/ 
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #F6C34A;
+    height: 62vh;
+    padding: 50px 100px 30px 140px;
+}
+
+.footer-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer #logo2{
+    width: 200px;
+    padding-bottom: 50px;
+}
+
+.footer-row{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+}
+
+.navfooter{
+    font-size: 20px;
+}
+
+#imagem-endereco{
+    width: 400px;
+    padding-top: 22px;
+}
+
+.lista{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 10px;
+}
+
+.redes{
+    display: flex;
+    gap: 15px;
+    padding-top: 20px;
+}
+
+.lista-adm{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+/* -------------------- FLUTUANTE   -------------------*/ 
+
+.whatsapp {
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    background-color: rgb(83, 214, 73);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    width: 65px;
+    height: 65px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.whatsapp img {
+    width: 45px;
+    padding-top: 5px;
+}

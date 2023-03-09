@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labescola - Area ADM</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="./area-adm.css">
+</head>
+
+<body>
+    <header>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        </style>
+        <a href="./home.html">
+            <img src="./midia/logo 1.png" alt="LabEscola logo" id="logo">
+        </a>
+        <nav>
+            <ul class="navegacao">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="./area-adm.html">Area ADM</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside>
+            <div class="nav-adm">
+                <a id="a-nav-turmas" href="./area-adm.html">Turmas</a>
+                <a id="a-nav-matriculas" href="./area-adm-matriculas.html">Matrículas</a>
+                <a id="a-nav-financeiro" href="./area-adm-financeiro.html">Financeiro Alunos</a>
+            </div>
+        </aside>
+        <section class="meio" id="meio">
+            <div id="input">
+                <input onkeyup="botaoBuscarTurma()" type="text" name="buscar" id="buscar" value="">
+                <button class="buscarTurma">Buscar</button>
+            </div>
+            <div class="container" id="container">
+                <div id="cards-turmas">
+                    <div class="turmas">
+                        <h1 class="titulo">Hipátia</h1>
+                    </div>
+                    <div class="turmas">
+                        <h1 class="titulo">Sibyla</h1>
+                    </div>
+                    <div class="turmas">
+                        <h1 class="titulo">Curie</h1>
+                    </div>
+                    <div class="turmas">
+                        <h1 class="titulo">Zhenyi</h1>
+                    </div>
+                    <div class="turmas">
+                        <h1 class="titulo">Clarke</h1>
+                    </div>
+                    <div class="turmas">
+                        <h1 class="titulo">Blackwell</h1>
+                    </div>
+                    <div class="turmas">
+                        <h1 class="titulo">Elion</h1>
+                    </div>
+                    <div class="turmas">
+                        <h1 class="titulo">Burnell</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="whatsapp">
+            <a href="https://web.whatsapp.com">
+                <img src="./midia/whatsApp.png" alt="WhatsApp Logo" id="whatsapp">
+            </a>
+        </div>
+    </main>
+    <footer>
+        <div class="labescolalogo">
+            <a href="./home.html">
+                <img src="./midia/logopng.png" alt="LabEscola logo" id="logo2">
+            </a>
+        </div>
+        <div class="footer-row">
+            <div id="address">
+                <h1 class="navfooter">Endereço</h1>
+                <a href="https://goo.gl/maps/3DimiSpe5v6exQz99">
+                    <img src="./midia/mapa.png" alt="Endereco Labenu" id="imagem-endereco">
+                </a>
+                <p>R. Pais Leme, 215. CEP 05424-150 - Pinheiros</p>
+            </div>
+
+            <div id="links">
+                <h1 class="navfooter">Links</h1>
+                <div class="lista">
+                    <a href="./index.html">Home</a>
+                    <a href="./cursos.html">Cursos</a>
+                    <a href="#">Blog</a>
+                    <a href="./contato.html">Fale Conosco</a>
+                    <a href="#">Termos e Condições</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+            <div id="sociais">
+                <h1 class="navfooter">Redes Sociais</h1>
+                <div class="redes">
+                    <a href="https://twitter.com/home">
+                        <img src="./midia/redes sociais/twitter.png" alt="twitter-logo">
+                    </a>
+                    <a href="https://linkedin.com">
+                        <img src="./midia/redes sociais/linkedin.png" alt="linkedin-logo">
+                    </a>
+                    <a href="https://facebook.com">
+                        <img src="./midia/redes sociais/facebook.png" alt="facebook-logo">
+                    </a>
+                    <a href="https://instagram.com">
+                        <img src="./midia/redes sociais/instagram.png" alt="instagram-logo">
+                    </a>
+                </div>
+            </div>
+            <div id="area-administrativa">
+                <h1 class="navfooter">Área Administrativa</h1>
+                <div class="lista-adm">
+                    <a href="./area-adm.html">Área Administrativa</a>
+                    <a href="./area-adm-matriculas.html">Espaço do Aluno</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </footer>
+</body>
+
+</html>
